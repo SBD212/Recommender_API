@@ -19,7 +19,7 @@ class MyEncoder(json.JSONEncoder):
 app = Flask(__name__)
 CORS(app)
 
-app.config["MONGO_URI"] = os.environ.get("MONGO_URl")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URL")
 mongo = PyMongo(app)
 
 app.json_encoder = MyEncoder
