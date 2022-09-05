@@ -31,5 +31,4 @@ def handle_user_input():
         data = request.json
         results = find_activities(mongo, data)
         return results
-    data = {'name':'junaid'}
-    return data.json()
+    return "hello"
