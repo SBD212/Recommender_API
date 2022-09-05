@@ -25,8 +25,11 @@ mongo = PyMongo(app)
 app.json_encoder = MyEncoder
 
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET", "POST"])
 def handle_user_input():
-    data = request.json
-    results = find_activities(mongo, data)
-    return results
+    if request.method == "POST":
+        data = request.json
+        results = find_activities(mongo, data)
+        return results
+    data = {'name':'junaid'}
+    return data.json()
