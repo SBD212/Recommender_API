@@ -1,4 +1,3 @@
-from turtle import distance
 from numpy import dot
 from numpy.linalg import norm
 
