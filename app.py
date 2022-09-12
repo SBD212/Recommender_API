@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_pymongo import PyMongo
 from bson.json_util import ObjectId
 from helpers import find_activities
+from algo import recommender
 import json
 import os
 
@@ -30,5 +31,6 @@ def handle_user_input():
     if request.method == "POST":
         data = request.json
         results = find_activities(mongo, data)
-        return results
+        recommended_activities = recommender(results, data)
+        return recommended_activities
     return "hello"

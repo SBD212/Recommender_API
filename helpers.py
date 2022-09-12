@@ -29,6 +29,6 @@ def find_activities(mongo, data):
         results.append(activity)
 
     ##sort results by distance
-    sorted_results = sorted(results, key=lambda k: k.get("dist", "10"))
+    #sorted_results = sorted(results, key=lambda k: k.get("dist", "10"))
 
-    return sorted_results
+    return results
